@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <nav id="side-nav">
+            <h4>Files</h4>
+            <ul>
+
+                <% for (let i=0; i < files.length; i++) {%>
+
+                <li><a href=<%= "/uploads/" + files[i] %>><%= files[i] %></a></li>
+                <%} %>
+            </ul>
+
+            <div id="btn-container">
+                <a href="/uploads/text"><button>text</button></a>
+                <a href="/uploads/picture"><button>picture</button></a>
+            </div>
+        </nav>
+
+        <div style="padding: 15px" id="view">
+
+            <%- singleFile %>
+            <% if (filename)  {%>
+            <img style="width: 90%; height: 90%;" src=<%= filename %> alt="">
+            <% } %>
+
+        </div id="view">
+    </main>
+</body>
+
+</html>
